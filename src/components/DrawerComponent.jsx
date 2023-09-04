@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const items = [
   {
-    text: "Inbox",
+    text: "Dashboard",
     icon: "k-i-inbox",
     path: "/dashboard",
     selected: true,
@@ -16,9 +16,9 @@ const items = [
     separator: true,
   },
   {
-    text: "Notifications",
+    text: "Chart",
     icon: "k-i-bell",
-    path: "/",
+    path: "/chart",
   },
   {
     text: "Calendar",

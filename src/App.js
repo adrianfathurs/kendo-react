@@ -7,6 +7,7 @@ import Main from './layout/Main';
 // Import component
 import Home from './views/Home';
 import Dashboard from './views/Dashboard';
+import Chart from './views/Chart';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" element={<Home />}></Route>
       <Route element={<Main />}>
         <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/chart" element={<Chart />}></Route>
       </Route>
     </Routes>
   );
