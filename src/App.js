@@ -6,7 +6,9 @@ import './App.scss';
 import Main from './layout/Main';
 // Import component
 import Home from './views/Home';
-import Dashboard from './views/Dashboard';
+import DashboardRealTimeMonitoring from './views/Dashboard/DashboardRealTimeMonitoring';
+import DashboardPergerakanBarge from './views/Dashboard/DashboardPergerakanBarge';
+import DashboardA2B from './views/Dashboard/DashboardA2B';
 import Chart from './views/Chart';
 
 function App() {
@@ -15,7 +17,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route element={<Main />}>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/dashboard" element={<DashboardRealTimeMonitoring />}></Route>
+        <Route path="/dashboard/real-time-monitoring" element={<DashboardRealTimeMonitoring />}></Route>
+        <Route path="/dashboard/pergerakan-barge" element={<DashboardPergerakanBarge />}></Route>
+        <Route path="/dashboard/A2B" element={<DashboardA2B />}></Route>
         <Route path="/chart" element={<Chart />}></Route>
       </Route>
     </Routes>
