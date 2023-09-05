@@ -35,7 +35,7 @@ const AppBarComponent = ({ emitHandleClick }) => {
         />
 
         <AppBarSection>
-          <h1 className="title">KendoReact</h1>
+          <h1 className="title">Project Port</h1>
         </AppBarSection>
 
         <AppBarSpacer
@@ -45,7 +45,7 @@ const AppBarComponent = ({ emitHandleClick }) => {
         />
 
         <AppBarSection>
-          <ul>
+          {/* <ul>
             <li>
               <span>What"s New</span>
             </li>
@@ -55,7 +55,7 @@ const AppBarComponent = ({ emitHandleClick }) => {
             <li>
               <span>Contacts</span>
             </li>
-          </ul>
+          </ul> */}
         </AppBarSection>
 
         <AppBarSpacer />

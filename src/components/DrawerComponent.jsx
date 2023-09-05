@@ -1,15 +1,33 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Drawer } from "@progress/kendo-react-layout";
+import { Drawer, DrawerNavigation } from "@progress/kendo-react-layout";
 
 // Import third party
 import styled from "styled-components";
 
 const items = [
   {
-    text: "Dashboard",
+    text: "Dashboard RTM",
     icon: "k-i-inbox",
-    path: "/dashboard",
+    path: "/dashboard/real-time-monitoring",
+    selected: true,
+  },
+  {
+    text: "Pergerakan Barge",
+    icon: "k-i-inbox",
+    path: "/dashboard/pergerakan-barge",
+    selected: true,
+  },
+  {
+    text: "A2B Support",
+    icon: "k-i-inbox",
+    path: "/dashboard/A2B",
+    selected: true,
+  },
+  {
+    text: "Performacen Barging Out PLH",
+    icon: "k-i-inbox",
+    path: "/dashboard/performance-barging-out-plh",
     selected: true,
   },
   {
@@ -75,7 +93,21 @@ const DrawerComponent = ({ propExpanded, propMode, emitHandleClick }) => {
             }))}
             onOverlayClick={emitHandleClick}
             onSelect={handleSelect}
-          ></StyledDrawer>
+          >
+            {/* <DrawerNavigation>
+                  <ul className="k-drawer-items">
+                      <li className="k-drawer-item k-selected">
+                          <span className="k-item-text">Home</span>
+                      </li>
+                      <li className="k-drawer-item">
+                          <span className="k-item-text">Products</span>
+                      </li>
+                      <li className="k-drawer-item">
+                          <span className="k-item-text">About</span>
+                      </li>
+                  </ul>
+            </DrawerNavigation> */}
+          </StyledDrawer>
         </div>
       ) : null}
     </div>
