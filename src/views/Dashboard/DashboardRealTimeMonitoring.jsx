@@ -1,9 +1,9 @@
 import React from 'react';
-import ExampleAmchartComponent from '../components/AmCharts/ExampleAmchartComponent';
-import PieChartComponent from '../components/AmCharts/PieChartComponent';
-import XYChartComponent from '../components/AmCharts/XYChartComponent';
+import ExampleAmchartComponent from '../../components/AmCharts/ExampleAmchartComponent';
+import PieChartComponent from '../../components/AmCharts/PieChartComponent';
+import XYChartComponent from '../../components/AmCharts/XYChartComponent';
 
-function Dashboard() {
+function DashboardRealTimeMonitoring() {
     return (
         <>
             <div className='row'>
@@ -31,4 +31,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default DashboardRealTimeMonitoring;
