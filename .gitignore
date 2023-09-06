@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Data need to download
+/src/components/Table/dummyData
+/src/components/Table/supplemental
+
+/kendo-ui-license.txt

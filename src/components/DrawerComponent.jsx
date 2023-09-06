@@ -1,9 +1,54 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Drawer, DrawerNavigation } from "@progress/kendo-react-layout";
+import SidebarComponent from "./Sidebar/SidebarComponent"
 
 // Import third party
 import styled from "styled-components";
+
+// const sidebarData = [
+//   {
+//     title: "About Us",
+//     path: "/about-us",
+//     icon: <AiIcons.AiFillHome />,
+//     iconClosed: <RiIcons.RiArrowDownSFill />,
+//     iconOpened: <RiIcons.RiArrowUpSFill />,
+ 
+//     subNav: [
+//       {
+//         title: "Our Aim",
+//         path: "/about-us/aim",
+//         icon: <IoIcons.IoIosPaper />,
+//       },
+//       {
+//         title: "Our Vision",
+//         path: "/about-us/vision",
+//         icon: <IoIcons.IoIosPaper />,
+//       },
+//     ],
+//   },
+// ]
+
+// const items = [
+//   {
+//     title: "Dashboard RTM",
+//     path: "/dashboard/real-time-monitoring",
+//     icon: "k-i-inbox",
+//     selected: true,
+//     subNav: [
+//       {
+//         title: "Our Aim",
+//         path: "/about-us/aim",
+//         icon: "k-i-inbox",
+//       },
+//       {
+//         title: "Our Vision",
+//         path: "/about-us/vision",
+//         icon: "k-i-inbox",
+//       },
+//     ],
+//   }
+// ]
 
 const items = [
   {
@@ -18,14 +63,14 @@ const items = [
     path: "/dashboard/pergerakan-barge",
     selected: true,
   },
+  // {
+  //   text: "A2B Support",
+  //   icon: "k-i-inbox",
+  //   path: "/dashboard/A2B",
+  //   selected: true,
+  // },
   {
-    text: "A2B Support",
-    icon: "k-i-inbox",
-    path: "/dashboard/A2B",
-    selected: true,
-  },
-  {
-    text: "Performacen Barging Out PLH",
+    text: "Performance Barging Out PLH",
     icon: "k-i-inbox",
     path: "/dashboard/performance-barging-out-plh",
     selected: true,
@@ -38,25 +83,26 @@ const items = [
     icon: "k-i-bell",
     path: "/chart",
   },
-  {
-    text: "Calendar",
-    icon: "k-i-calendar",
-    path: "/",
-  },
-  {
-    separator: true,
-  },
-  {
-    text: "Attachments",
-    icon: "k-i-hyperlink-email",
-    path: "/",
-  },
-  {
-    text: "Favourites",
-    icon: "k-i-star-outline",
-    path: "/",
-  },
+  // {
+  //   text: "Calendar",
+  //   icon: "k-i-calendar",
+  //   path: "/",
+  // },
+  // {
+  //   separator: true,
+  // },
+  // {
+  //   text: "Attachments",
+  //   icon: "k-i-hyperlink-email",
+  //   path: "/",
+  // },
+  // {
+  //   text: "Favourites",
+  //   icon: "k-i-star-outline",
+  //   path: "/",
+  // },
 ];
+
 const StyledDrawer = styled(Drawer)`
   min-height: 100vh;
   .k-drawer-items {
@@ -95,7 +141,8 @@ const DrawerComponent = ({ propExpanded, propMode, emitHandleClick }) => {
             onSelect={handleSelect}
           >
             {/* <DrawerNavigation>
-                  <ul className="k-drawer-items">
+              <SidebarComponent item={items} /> */}
+                  {/* <ul className="k-drawer-items">
                       <li className="k-drawer-item k-selected">
                           <span className="k-item-text">Home</span>
                       </li>
@@ -105,8 +152,8 @@ const DrawerComponent = ({ propExpanded, propMode, emitHandleClick }) => {
                       <li className="k-drawer-item">
                           <span className="k-item-text">About</span>
                       </li>
-                  </ul>
-            </DrawerNavigation> */}
+                  </ul> */}
+            {/* </DrawerNavigation> */}
           </StyledDrawer>
         </div>
       ) : null}

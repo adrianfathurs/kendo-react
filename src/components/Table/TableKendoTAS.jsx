@@ -60,7 +60,7 @@ const DetailComponent = (props) => {
     </div>
   );
 };
-const TableKendo = ({dataTableProps}) => {
+const TableKendoTAS = ({dataTableProps}) => {
   //state
   let _pdfExport;
   let _export;
@@ -135,13 +135,13 @@ const TableKendo = ({dataTableProps}) => {
             >
               <Grid
                 style={{
-                  height: "500px",
+                  height: "250px",
                   width: "inherit",
                 }}
                 // sortable={true}
-                filterable={true}
+                // filterable={true}
                 // groupable={true}
-                reorderable={true}
+                // reorderable={true}
                 pageable={{
                   buttonCount: 4,
                   pageSizes: true,
@@ -178,9 +178,9 @@ const TableKendo = ({dataTableProps}) => {
                   filterable={false}
                   width="90px"
                 />
-                <GridColumn title="Equipment" field="equipment"/>
-                <GridColumn title="Status" field="status" />
-                <GridColumn title="Remark" field="remark" />
+                <GridColumn title="Area" field="area"/>
+                <GridColumn title="TAS(m)" field="tas" />
+                <GridColumn title="Trend" field="trend" />
               </Grid>
             </ExcelExport>
             <GridPDFExport
@@ -228,4 +228,4 @@ const TableKendo = ({dataTableProps}) => {
     </div>
   );
 };
-export default TableKendo;
+export default TableKendoTAS;
