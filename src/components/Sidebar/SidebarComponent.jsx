@@ -17,7 +17,7 @@ const SidebarComponent = ({sidebarData}) => {
                 {
                     element.children.map((child, index2) => (
                       <div  className={child.path == location.pathname ? "text-danger px-3 py-1 text-pointer" : "px-3 text-pointer py-1"} onClick={()=> navigate(child.path)} key={index}>
-                        {child.title}
+                        {child.icon} &nbsp; {child.title}
                       </div>
                     ))
                 }
@@ -26,7 +26,6 @@ const SidebarComponent = ({sidebarData}) => {
               <div onClick={() => goToPage(element.path)} className={element.path == location.pathname ? "px-3 py-3 text-pointer bg-danger-custom text-white" : "text-danger-custom font-weight-bold px-3 text-pointer py-3"}>
                 {element.title_parent}
               </div>
-            // <PanelBarItem title={element.title_parent} selected={location.pathname == element.path ?  : false}/>
         ))}
       </PanelBar>
     </div>

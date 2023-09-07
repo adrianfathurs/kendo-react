@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Drawer, DrawerNavigation } from "@progress/kendo-react-layout";
 import SidebarComponent from "./Sidebar/SidebarComponent"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChartLine, faHouse, faTableColumns } from '@fortawesome/free-solid-svg-icons'
 
 // Import third party
 import styled from "styled-components";
@@ -83,41 +85,44 @@ const items = [
   {
     title_parent: "Dashboard",
     path:"",
-    childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh'],
+    childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh', '/dashboard/pergerakan-barge'],
     children:[
       {
         title: "Real Time Monitoring",
         path: "/dashboard/real-time-monitoring",
+        icon: <FontAwesomeIcon icon={faHouse} />
       },
-      // {
-      //   title: "Pergerakan Barge",
-      //   path: "/dashboard/pergerakan-barge",
-      // },
+      {
+        title: "Pergerakan Barge",
+        path: "/dashboard/pergerakan-barge",
+        icon: <FontAwesomeIcon icon={faTableColumns} />
+      },
       {
         title: "Performance Barging Out PLH",
         path: "/dashboard/performance-barging-out-plh",
+        icon: <FontAwesomeIcon icon={faChartLine} />
       },
     ]
   },
-  {
-    title_parent: "Dashboard",
-    path:"",
-    childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh'],
-    children:[
-      {
-        title: "Real Time Monitoring",
-        path: "/dashboard/real-time-monitoring",
-      },
-      // {
-      //   title: "Pergerakan Barge",
-      //   path: "/dashboard/pergerakan-barge",
-      // },
-      {
-        title: "Performance Barging Out PLH",
-        path: "/dashboard/performance-barging-out-plh",
-      },
-    ]
-  },
+  // {
+  //   title_parent: "Dashboard",
+  //   path:"",
+  //   childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh'],
+  //   children:[
+  //     {
+  //       title: "Real Time Monitoring",
+  //       path: "/dashboard/real-time-monitoring",
+  //     },
+  //     {
+  //       title: "Pergerakan Barge",
+  //       path: "/dashboard/pergerakan-barge",
+  //     },
+  //     {
+  //       title: "Performance Barging Out PLH",
+  //       path: "/dashboard/performance-barging-out-plh",
+  //     },
+  //   ]
+  // },
   // {
   //   title_parent: "Comunication",
   //   path: "/dashboard/pergerakan-barge",
