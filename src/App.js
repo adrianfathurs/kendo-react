@@ -18,12 +18,12 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route element={<Main />}>
-        <Route path="/dashboard" element={<DashboardRealTimeMonitoring />}></Route>
-        <Route path="/dashboard/real-time-monitoring" element={<DashboardRealTimeMonitoring />}></Route>
-        <Route path="/dashboard/pergerakan-barge" element={<DashboardPergerakanBarge />}></Route>
-        <Route path="/dashboard/performance-barging-out-plh" element={<DashboardPerformanceBargingOutPLH />}></Route>
-        <Route path="/dashboard/A2B" element={<DashboardA2B />}></Route>
-        <Route path="/chart" element={<Chart />}></Route>
+        <Route name="dashboard" path="/dashboard" element={<DashboardRealTimeMonitoring />}></Route>
+        <Route name="dashboard-real-time-monitoring" path="/dashboard/real-time-monitoring" element={<DashboardRealTimeMonitoring />}></Route>
+        <Route name="dashboard-pergerakan-barge" path="/dashboard/pergerakan-barge" element={<DashboardPergerakanBarge />}></Route>
+        <Route name="dashboard-performance-barging-out-plh" path="/dashboard/performance-barging-out-plh" element={<DashboardPerformanceBargingOutPLH />}></Route>
+        <Route name="dashboard-a2b" path="/dashboard/A2B" element={<DashboardA2B />}></Route>
+        <Route name="dashboard-chart" path="/chart" element={<Chart />}></Route>
       </Route>
     </Routes>
   );
