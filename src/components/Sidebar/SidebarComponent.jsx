@@ -4,44 +4,30 @@ import { PanelBar, PanelBarItem } from '@progress/kendo-react-layout';
 const SidebarComponent = ({sidebarData}) => {
   const location = useLocation()
   const navigate = useNavigate()
-  const goToPage = (child) => {
-    navigate(child.path)
+  const goToPage = (path) => {
+    navigate(path)
     return true
   }
   return (
     <div className="panelbar-wrapper">
       <PanelBar>
         { sidebarData.map((element, index)=>(
-          <PanelBarItem title={element.title_parent} expanded={true} key={index}>
-            {
-              element.children.map((child, index2) => (
-                <div  className={child.path == location.pathname ? "text-danger px-3" : "px-3"} onClick={()=> navigate(child.path)} key={index}>
-                  {child.title}
-                </div>
-              ))
-            }
-          </PanelBarItem>
-        ))}
-        {/* <PanelBarItem title={'Projects'} expanded={true}> */}
-          {/* <PanelBarItem title={'New Business Plan'} selected={true} /> */}
-          {/* <PanelBarItem title={'Sales Forecasts'}>
-            <PanelBarItem title={'Q1 Forecast'} />
-            <PanelBarItem title={'Q2 Forecast'} />
-            <PanelBarItem title={'Q3 Forecast'} />
-            <PanelBarItem title={'Q4 Forecast'} >
-              <PanelBarItem title="Programs">
-                <PanelBarItem title="Monday" />
-                <PanelBarItem title="Tuesday" />
-                <PanelBarItem title="Wednesday" />
-                <PanelBarItem title="Thursday" />
-                <PanelBarItem title="Friday" />
+            element.children.length != 0 ?
+              <PanelBarItem title={element.title_parent} expanded={element.childrenList.includes(location.pathname)} key={index}>
+                {
+                    element.children.map((child, index2) => (
+                      <div  className={child.path == location.pathname ? "text-danger px-3 py-1 text-pointer" : "px-3 text-pointer py-1"} onClick={()=> navigate(child.path)} key={index}>
+                        {child.title}
+                      </div>
+                    ))
+                }
               </PanelBarItem>
-            </PanelBarItem>
-          </PanelBarItem>
-          <PanelBarItem title={'Sales Reports'} />
-        </PanelBarItem>
-        
-        <PanelBarItem title="Communication" /> */}
+            : 
+              <div onClick={() => goToPage(element.path)} className={element.path == location.pathname ? "px-3 py-3 text-pointer bg-danger-custom text-white" : "text-danger-custom font-weight-bold px-3 text-pointer py-3"}>
+                {element.title_parent}
+              </div>
+            // <PanelBarItem title={element.title_parent} selected={location.pathname == element.path ?  : false}/>
+        ))}
       </PanelBar>
     </div>
   )

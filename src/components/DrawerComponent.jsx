@@ -82,6 +82,8 @@ import styled from "styled-components";
 const items = [
   {
     title_parent: "Dashboard",
+    path:"",
+    childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh'],
     children:[
       {
         title: "Real Time Monitoring",
@@ -97,6 +99,31 @@ const items = [
       },
     ]
   },
+  {
+    title_parent: "Dashboard",
+    path:"",
+    childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh'],
+    children:[
+      {
+        title: "Real Time Monitoring",
+        path: "/dashboard/real-time-monitoring",
+      },
+      // {
+      //   title: "Pergerakan Barge",
+      //   path: "/dashboard/pergerakan-barge",
+      // },
+      {
+        title: "Performance Barging Out PLH",
+        path: "/dashboard/performance-barging-out-plh",
+      },
+    ]
+  },
+  // {
+  //   title_parent: "Comunication",
+  //   path: "/dashboard/pergerakan-barge",
+  //   childrenList:[],
+  //   children:[]
+  // },
 ]
 
 const StyledDrawer = styled(Drawer)`
