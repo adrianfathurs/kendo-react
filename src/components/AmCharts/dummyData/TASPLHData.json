@@ -1,0 +1,27 @@
+[
+    {
+      "category": "MTD",
+      "PAPlan": 4,
+      "PAActual": 7,
+      "PAAchieve": 163
+    },
+    {
+      "category": "Monthly",
+      "PAPlan": 10,
+      "PAActual": 7,
+      "PAAchieve": 65
+    },
+    {
+      "category": "YTD",
+      "PAPlan": 84,
+      "PAActual": 87,
+      "PAAchieve": 103
+    },
+    {
+      "category": "Yearly",
+      "PAPlan": 143,
+      "PAActual": 87,
+      "PAAchieve": 60
+    }
+  ]
+  

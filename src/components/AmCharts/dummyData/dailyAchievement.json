@@ -1,0 +1,30 @@
+[
+  {
+    "category": "CRO18",
+    "capacity": 15140,
+    "plan": 17400,
+    "actual": 15694,
+    "achiev": 21000
+  },
+  {
+    "category": "CRO24",
+    "capacity": 16425,
+    "plan": 18500,
+    "actual": 19300,
+    "achiev": 22000
+  },
+  {
+    "category": "CRO30",
+    "capacity": 25900,
+    "plan": 29900,
+    "actual": 27527,
+    "achiev": 30000
+  },
+  {
+    "category": "Total",
+    "capacity": 57645,
+    "plan": 65800,
+    "actual": 63021,
+    "achiev": 70000
+  }
+]

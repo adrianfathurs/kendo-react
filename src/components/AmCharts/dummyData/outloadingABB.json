@@ -1,0 +1,27 @@
+[
+    {
+      "category": "MTD",
+      "abbplan": 15140,
+      "abbactual": 17400,
+      "abbachiev": 21000
+    },
+    {
+      "category": "Monthly",
+      "abbplan": 16425,
+      "abbactual": 18500,
+      "abbachiev": 22000
+    },
+    {
+      "category": "YTD",
+      "abbplan": 25900,
+      "abbactual": 29900,
+      "abbachiev": 30000
+    },
+    {
+      "category": "Yearly",
+      "abbplan": 57645,
+      "abbactual": 65800,
+      "abbachiev": 70000
+    }
+  ]
+  
