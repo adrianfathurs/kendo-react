@@ -18,3 +18,13 @@
     //     background-color: #dddddd;
     // }
 }
+.k-grid .k-cell-inner > .k-link {
+    justify-content: center !important;
+}
+
+#table-kendo-multi-header{
+    .k-grid .k-grid-header .k-table-th{
+        font-weight: 500;
+        background-color: rgba(55, 180, 0, 0.32) !important;
+    }
+}
