@@ -11,6 +11,8 @@ import DashboardPergerakanBarge from './views/Dashboard/DashboardPergerakanBarge
 import DashboardPerformanceBargingOutPLH from './views/Dashboard/DashboardPerformanceBargingOutPLH';
 import DashboardA2B from './views/Dashboard/DashboardA2B';
 import Chart from './views/Chart';
+import LibraryTable from './views/Library/LibraryTable';
+import LibraryChart from './views/Library/LibraryChart';
 
 function App() {
 
@@ -22,8 +24,10 @@ function App() {
         <Route name="dashboard-real-time-monitoring" path="/dashboard/real-time-monitoring" element={<DashboardRealTimeMonitoring />}></Route>
         <Route name="dashboard-pergerakan-barge" path="/dashboard/pergerakan-barge" element={<DashboardPergerakanBarge />}></Route>
         <Route name="dashboard-performance-barging-out-plh" path="/dashboard/performance-barging-out-plh" element={<DashboardPerformanceBargingOutPLH />}></Route>
-        <Route name="dashboard-a2b" path="/dashboard/A2B" element={<DashboardA2B />}></Route>
+        <Route name="dashboard-a2b" path="/dashboard/A2B" element={<DashboardRealTimeMonitoring/>}></Route>
         <Route name="dashboard-chart" path="/chart" element={<Chart />}></Route>
+        <Route name="library-table" path="/library/table" element={<LibraryTable />}></Route>
+        <Route name="library-chart" path="/library/chart" element={<LibraryChart />}></Route>
       </Route>
     </Routes>
   );
