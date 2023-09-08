@@ -104,28 +104,38 @@ const items = [
       },
     ]
   },
-  // {
-  //   title_parent: "Dashboard",
-  //   path:"",
-  //   childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh'],
-  //   children:[
-  //     {
-  //       title: "Real Time Monitoring",
-  //       path: "/dashboard/real-time-monitoring",
-  //     },
-  //     {
-  //       title: "Pergerakan Barge",
-  //       path: "/dashboard/pergerakan-barge",
-  //     },
-  //     {
-  //       title: "Performance Barging Out PLH",
-  //       path: "/dashboard/performance-barging-out-plh",
-  //     },
-  //   ]
-  // },
+  {
+    title_parent: "Performance",
+    path:"",
+    childrenList: ['/dashboard/A2B'],
+    children:[
+      {
+        title: "A2B",
+        path: "/dashboard/A2B",
+        icon: <FontAwesomeIcon icon={faHouse} />
+      },
+    ]
+  },
+  {
+    title_parent: "Library",
+    path:"",
+    childrenList: ['/library/table'],
+    children:[
+      {
+        title: "Table",
+        path: "/library/table",
+        icon: <FontAwesomeIcon icon={faHouse} />
+      },
+      {
+        title: "Chart",
+        path: "/library/chart",
+        icon: <FontAwesomeIcon icon={faHouse} />
+      },
+    ]
+  },
   // {
   //   title_parent: "Comunication",
-  //   path: "/dashboard/pergerakan-barge",
+  //   path: "/dashboard/A2B",
   //   childrenList:[],
   //   children:[]
   // },

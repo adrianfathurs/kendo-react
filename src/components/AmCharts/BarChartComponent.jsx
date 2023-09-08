@@ -3,7 +3,6 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-
 function App({chartNameProps, chartDataProps, chartLineProps, categoryChartProps}) {
   useLayoutEffect(() => {
     
@@ -85,14 +84,16 @@ function App({chartNameProps, chartDataProps, chartLineProps, categoryChartProps
           locationY: 0,
           sprite: am5.Label.new(root, {
             text: "{valueY}",
-            fill: root.interfaceColors.get("alternativeText"),
-            centerY: 0,
-            centerX: am5.p50,
+            fill: am5.color('#000000'), //I'd like to use fill: {color}
+            stroke: am5.color('#fff'),
+            strokeWidth: 1,
+            centerY: am5.p50,
+            centerX: am5.p100,
+            rotation: "90",
             populateText: true
           })
         });
       });
-      
       legend.data.push(series);
     }
 
@@ -104,13 +105,20 @@ function App({chartNameProps, chartDataProps, chartLineProps, categoryChartProps
           yAxis: yAxis,
           valueYField: fieldName,
           categoryXField: categoryChartProps,
+          showTooltipOn: "always",
           tooltip: am5.Tooltip.new(root, {
-            pointerOrientation: "horizontal",
-            labelText: "{name} in {categoryX} : {valueY} {info}"
+            showTooltipOn: "always",
+            labelText: "{valueY}",
+            getFillFromSprite: false,
+            getStrokeFromSprite: true,
+            autoTextColor: false,
+            getLabelFillFromSprite: true,
+            fill: am5.color(0xffffff),
+            fillOpacity: 0.8
           })
         })
       );
-      
+
       series2.strokes.template.setAll({
         strokeWidth: 3,
         templateField: "strokeSettings"
@@ -122,10 +130,15 @@ function App({chartNameProps, chartDataProps, chartLineProps, categoryChartProps
       series2.bullets.push(function() {
         return am5.Bullet.new(root, {
           sprite: am5.Circle.new(root, {
-            strokeWidth: 3,
-            stroke: series2.get("stroke"),
             radius: 5,
-            fill: root.interfaceColors.get("background")
+            fill: am5.color(0xd9d9d9),
+            fillOpacity: 0.5,
+            stroke: root.interfaceColors.get("background"),
+            strokeWidth: 2,
+            stroke: series2.get("stroke"),
+            showTooltipOn: "always",
+            tooltipText: "{valueY}",
+            tooltip: am5.Tooltip.new(root, {})
           })
         });
       });

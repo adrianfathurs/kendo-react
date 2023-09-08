@@ -5,6 +5,8 @@ import TableKendoA2B from "../../components/Table/TableKendoA2B";
 import TableKendoPlanHauling from "../../components/Table/TableKendoPlanHauling";
 import TableKendoPlanHauling2 from "../../components/Table/TableKendoPlanHauling2";
 import TableKendoTAS from "../../components/Table/TableKendoTAS";
+import TableKendoFilter from "../../components/Table/TableKendoFilter";
+import TableKendoFilter2 from "../../components/Table/trial/TableKendoFilter";
 
 // import data for table kendo a2bWL
 import A2BWLData from "../../components/Table/dummyData/A2BWLData.json"
@@ -75,6 +77,30 @@ const DashboardPergerakanBarge = (props) => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row mt-3">
+        <div className="col">
+          <div className="card p-2 shadow">
+            <div className="d-flex justify-content-center">
+              <h4>Example Table</h4>
+            </div>
+            <div className="mt-3">
+              <TableKendoFilter />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row mt-3">
+        <div className="col">
+          <div className="card p-2 shadow">
+            <div className="d-flex justify-content-center">
+              <h4>Example Table 2</h4>
+            </div>
+            <div className="mt-3">
+              <TableKendoFilter2 />
             </div>
           </div>
         </div>

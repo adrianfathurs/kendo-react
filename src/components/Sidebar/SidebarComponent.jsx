@@ -13,7 +13,7 @@ const SidebarComponent = ({sidebarData}) => {
       <PanelBar>
         { sidebarData.map((element, index)=>(
             element.children.length != 0 ?
-              <PanelBarItem title={element.title_parent} expanded={element.childrenList.includes(location.pathname)} key={index}>
+              <PanelBarItem title={element.title_parent} expanded={element.childrenList.includes(location.pathname) ? true : false } key={index}>
                 {
                     element.children.map((child, index2) => (
                       <div  className={child.path == location.pathname ? "text-danger px-3 py-1 text-pointer" : "px-3 text-pointer py-1"} onClick={()=> navigate(child.path)} key={index}>
