@@ -4,6 +4,8 @@ import TableKendoFilter2 from '../../components/Table/trial/TableKendoFilter';
 import TableKendoMultiHeader from '../../components/Table/trial/TableKendoMultiHeader/TableKendoMultiHeader';
 import TableKendoMultiHeader2 from '../../components/Table/trial/TableKendoMultiHeader/TableKendoMultiHeader2';
 
+// Import Data Pergerakan Barge
+import pergerakanBargeData from "../../components/Table/dummyData/pergerakanBarge.json"
 const LibraryTable = props => {
     return (
         <>
@@ -21,7 +23,7 @@ const LibraryTable = props => {
                         <div>
                             <h4>Table With Lock Column, Selected Row, Filter, Pagination</h4>
                         </div>
-                        <TableKendoFilter2/>
+                        <TableKendoFilter2 dataTableProps={pergerakanBargeData} dataItemKey={"id"} selectedField={"selected"} />
                     </div>
                 </div>
                 <div className='row mt-3'>
