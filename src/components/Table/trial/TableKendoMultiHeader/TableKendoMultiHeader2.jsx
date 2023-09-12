@@ -21,13 +21,13 @@ const TableKendoMultiHeader = () => {
             <Column
               field="ProductID"
               title="Entity"
-              width={90}
+              width={70}
               resizable={false}
             />
             <Column
               field="ProductName"
               title="Product"
-              width={300}
+              width={100}
               resizable={false}
             />
             <Column title="Dump To">
