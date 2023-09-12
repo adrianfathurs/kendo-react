@@ -1,10 +1,10 @@
 import React from "react";
 import TablePergerakanBarge from "../../components/Table/TablePergerakanBarge";
-import TableKendoPergerakanBarge from "../../components/Table/TableKendoPergerakanBarge";
-import TableKendoA2B from "../../components/Table/TableKendoA2B";
+import TableKendoPergerakanBarge from "../../components/Table/TableKendoPergerakanBargeOld";
+import TableKendoA2B from "../../components/Table/TableKendoA2BOld";
 import TableKendoPlanHauling from "../../components/Table/TableKendoPlanHauling";
 import TableKendoPlanHauling2 from "../../components/Table/TableKendoPlanHauling2";
-import TableKendoTAS from "../../components/Table/TableKendoTAS";
+import TableKendoTAS from "../../components/Table/TableKendoTASOld";
 import TableKendoFilter from "../../components/Table/TableKendoFilter";
 import TableKendoFilter2 from "../../components/Table/trial/TableKendoFilter";
 
