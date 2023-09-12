@@ -1,0 +1,38 @@
+#table-kendo-barging-out-plh{
+    .k-grid {
+        .k-grid-header {
+            .k-table-th{
+                font-weight: 500;
+                font-size: 14px;
+                background-color: rgba(55, 180, 0, 0.32) !important;
+            }
+        } 
+        .k-table-tbody{
+            font-size: 12px;
+            .k-detail-cell{
+                background-color: rgba(55, 180, 0, 0.32) !important;
+            }
+            td{
+                .text-danger{
+                    color: aqua!important;
+                }
+            }
+        }
+    }
+}
+#table-manual-barging-out-plh{
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th{
+        background: aliceblue;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+}
