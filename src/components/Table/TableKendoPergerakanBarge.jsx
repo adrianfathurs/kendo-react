@@ -8,9 +8,16 @@ import {
   getSelectedState,
 } from "@progress/kendo-react-grid";
 import { CustomColumnMenu } from "../Table/trial/customColumnMenu";
-import { cellWithBackGround, cellWithBackGroundPergerakanBarge } from "../../utils/table";
-import pergerakanBarge from "../../components/Table/dummyData/pergerakanBarge.json";
+import { CustomFilterUI } from "./customFilterUI";
+import { GridColumnMenuFilter } from "@progress/kendo-react-grid";
 
+import {
+  cellWithBackGround,
+  cellWithBackGroundPergerakanBarge,
+} from "../../utils/table";
+import {convertDateTime} from "../../utils/dateTime/index"
+
+import pergerakanBargeData from "../../components/Table/dummyData/pergerakanBarge.json";
 import columns from "./dummyData/columnsPergerakanBarge";
 
 const DATA_ITEM_KEY = "id";
@@ -19,7 +26,7 @@ const idGetter = getter(DATA_ITEM_KEY);
 
 const createDataState = (dataState) => {
   return {
-    result: process(pergerakanBarge.slice(0), dataState),
+    result: process(pergerakanBargeData.slice(0), dataState),
     dataState: dataState,
   };
 };
@@ -73,18 +80,18 @@ const TableKendoPergerakanBarge = () => {
                 key={idx}
                 cell={
                   column.title === "Unit Price"
-                    ? (props) => cellWithBackGround(props, 25, column.title) 
-                    : column.title === "Status" ? (props) => cellWithBackGroundPergerakanBarge(props) : null
+                    ? (props) => cellWithBackGround(props, 25, column.title)
+                    : column.title === "Status"
+                    ? (props) => cellWithBackGroundPergerakanBarge(props)
+                    : column.title === "Eta"
+                    ? (props) => convertDateTime(props, "DD/MM/YYYY HH:mm")
+                    : null
                 }
                 field={column.field}
                 title={column.title}
                 filter={column.filter}
                 columnMenu={(props) => (
-                  <CustomColumnMenu
-                    {...props}
-                    columns={stateColumns}
-                    onColumnsSubmit={onColumnsSubmit}
-                  />
+                  <GridColumnMenuFilter {...props} filterUI={CustomFilterUI} />
                 )}
               />
             )

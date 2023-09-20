@@ -85,39 +85,44 @@ const items = [
   {
     title_parent: "Dashboard",
     path:"",
-    childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh', '/dashboard/pergerakan-barge'],
+    childrenList: ['/dashboard/real-time-monitoring', '/dashboard/performance-barging-out-plh', '/dashboard/pergerakan-barge', '/dashboard/performance-jetty-plh'],
     children:[
       {
         title: "Real Time Monitoring",
         path: "/dashboard/real-time-monitoring",
         icon: <FontAwesomeIcon icon={faHouse} />
       },
-      {
-        title: "Pergerakan Barge",
-        path: "/dashboard/pergerakan-barge",
-        icon: <FontAwesomeIcon icon={faTableColumns} />
-      },
+      // {
+      //   title: "Pergerakan Barge",
+      //   path: "/dashboard/pergerakan-barge",
+      //   icon: <FontAwesomeIcon icon={faTableColumns} />
+      // },
       {
         title: "Performance Barging Out PLH",
         path: "/dashboard/performance-barging-out-plh",
         icon: <FontAwesomeIcon icon={faChartLine} />
       },
-    ]
-  },
-  {
-    title_parent: "Performance",
-    path:"",
-    childrenList: ['/dashboard/A2B'],
-    children:[
       {
-        title: "A2B",
-        path: "/dashboard/A2B",
-        icon: <FontAwesomeIcon icon={faHouse} />
+        title: "Performance Jetty PLH",
+        path: "/dashboard/performance-jetty-plh",
+        icon: <FontAwesomeIcon icon={faChartLine} />
       },
     ]
   },
+  // {
+  //   title_parent: "Performance",
+  //   path:"",
+  //   childrenList: ['/dashboard/A2B'],
+  //   children:[
+  //     {
+  //       title: "A2B",
+  //       path: "/dashboard/A2B",
+  //       icon: <FontAwesomeIcon icon={faHouse} />
+  //     },
+  //   ]
+  // },
   {
-    title_parent: "Library",
+    title_parent: "Library Development",
     path:"",
     childrenList: ['/library/table'],
     children:[
@@ -179,7 +184,7 @@ const DrawerComponent = ({ propExpanded, propMode, emitHandleClick }) => {
             onSelect={handleSelect}
           >
             <DrawerNavigation>
-              <SidebarComponent sidebarData={items}/>
+              <SidebarComponent sidebarData={items} emitHandleClick={emitHandleClick}/>
             </DrawerNavigation>
           </StyledDrawer>
         </div>

@@ -17,6 +17,22 @@ export const cellWithBackGround = (props, limit) => {
     </td>
   );
 };
+export const cellWithBackGroundA2BSupport = (props, limit) => {
+  const examplePrice = props.dataItem[props.field] < limit;
+  var style = {
+    backgroundColor: examplePrice
+      ? "rgb(243, 23, 0, 0.32)"
+      : "",
+    color: examplePrice ? "rgb(207, 57, 0)" : "",
+    fontWeight: examplePrice ? 600 : 400
+  };
+  var field = props.field || "";
+  return (
+    <td style={style}>
+      {props.dataItem[field]}
+    </td>
+  );
+};
 export const cellWithBackGroundPergerakanBarge = (props) => {
   var style = {
     backgroundColor: "rgb(243, 23, 0, 0.32)",
@@ -46,6 +62,15 @@ export const cellFontColor = (props, limit) => {
   style.fontWeight = 600;
   const field = props.field || "";
   return <td style={style}>{props.dataItem[field]}</td>;
+}
+
+export const cellFontColorPlanHauling = (props, limit) => {
+  let style = { color: "black" };
+  if(props.dataItem['statusSubTotal'] || props.field == "Total"){
+    style.fontWeight = 700;
+  }
+  const field = props.field || "";
+  return <td style={style}>{props.dataItem[field]}</td>;
 };
 
 export const cellFontColorA2B = (props, limit) => {
@@ -56,4 +81,32 @@ export const cellFontColorA2B = (props, limit) => {
   }
   const field = props.field || "";
   return <td style={style}>{props.dataItem[field]}</td>;
+};
+
+export const cellFontColorJetty = (props, limit) => {
+  let style = { color: "black" };
+  if (props.dataItem[props.field] === "per Day" || props.dataItem[props.field] === "per Barge") {
+    style.color = "#128FDA";
+    style.fontWeight = 600;
+  }
+  const field = props.field || "";
+  return <td style={style}>{props.dataItem[field]}</td>;
+};
+
+export const cellFontColorTAS = (props, limit) =>{
+  let style = { color: "black" };
+  if (props.dataItem[props.field] === "Turun") {
+    style.color = "#DE2812";
+    style.fontWeight = 600;
+  }
+  else if (props.dataItem[props.field] === "Naik") {
+    style.color = "#51CD13";
+    style.fontWeight = 600;
+  }
+  else if (props.dataItem[props.field] === "Bertahan") {
+    style.color = "#DAD117";
+    style.fontWeight = 600;
+  }
+  const field = props.field || "";
+    return <td style={style}>{props.dataItem[field]}</td>;
 };

@@ -1,0 +1,18 @@
+[
+    {
+      "category": "CRO18",
+      "plan": 1000,
+      "actual": 1009
+    },
+    {
+      "category": "CRO24",
+      "plan": 1250,
+      "actual": 1302
+    },
+    {
+      "category": "CRO30",
+      "plan": 2500,
+      "actual": 2671
+    }
+  ]
+  

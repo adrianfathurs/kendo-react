@@ -1,5 +1,7 @@
 @import './TableKendoBargingOutPLHSass.scss';
 @import './TableKendoPergerakanBargeSass.scss';
+@import './TableKendoA2BSupportSass.scss';
+@import './TablePlanMultiRowMultiCols.scss';
 #pergerakan-barge {
     table {
         font-family: arial, sans-serif;
@@ -9,10 +11,10 @@
     
     th{
         background: aliceblue;
+        text-align: center;
     }
     td, th {
         border: 1px solid #dddddd;
-        text-align: left;
         padding: 8px;
     }
     

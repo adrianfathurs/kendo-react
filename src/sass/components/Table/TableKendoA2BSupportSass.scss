@@ -1,0 +1,25 @@
+#table-kendo-A2B-support{
+    .k-grid {
+        .k-grid-header {
+            .k-table-th{
+                font-weight: 500;
+                font-size: 14px;
+                background-color: rgba(55, 180, 0, 0.32) !important;
+            }
+        } 
+        .k-table-tbody{
+            font-size: 12px;
+            .k-detail-cell{
+                background-color: rgba(55, 180, 0, 0.32) !important;
+            }
+            td{
+                .text-danger{
+                    color: aqua!important;
+                }
+            }
+            .k-selected{
+                background-color: burlywood !important;
+            }
+        }
+    }
+}

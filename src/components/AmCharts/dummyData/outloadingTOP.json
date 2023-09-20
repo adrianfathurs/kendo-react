@@ -1,27 +1,26 @@
 [
     {
-      "category": "MTD",
-      "plan": 240000,
-      "actual": 422022,
+      "category": "Daily",
+      "plan": 38720,
+      "actual": 32798,
       "achiev": 900000
     },
     {
       "category": "Monthly",
-      "plan": 600000,
-      "actual": 422022,
+      "plan": 96800,
+      "actual": 32798,
       "achiev": 290000
     },
     {
       "category": "YTD",
-      "plan": 4273353,
-      "actual": 4460838,
+      "plan": 302531,
+      "actual": 296610,
       "achiev": 4500000
     },
     {
       "category": "Yearly",
-      "plan": 7813353,
-      "actual": 4460838,
+      "plan": 595311,
+      "actual": 296610,
       "achiev": 1500000
     }
   ]
-  

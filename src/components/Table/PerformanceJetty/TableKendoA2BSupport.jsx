@@ -7,18 +7,18 @@ import {
   GridColumn as Column,
   getSelectedState,
 } from "@progress/kendo-react-grid";
-import { CustomColumnMenu } from "../Table/trial/customColumnMenu";
-import { cellWithBackGround, cellWithBackGroundPergerakanBarge, cellFontColorTAS } from "../../utils/table";
-import { CustomFilterUI } from "./customFilterUI";
+import { CustomColumnMenu } from "../trial/customColumnMenu";
+import { cellFontColorA2B, cellWithBackGroundA2BSupport} from "../../../utils/table";
+import { CustomFilterUI } from "../customFilterUI";
 import { GridColumnMenuFilter } from "@progress/kendo-react-grid";
-import {convertDateTime} from "../../utils/dateTime/index"
-import {getCapitilization} from "../../utils/typography/index"
+
+import columns from "../dummyData/columnsA2BSupport";
 
 const DATA_ITEM_KEY = "id";
 const SELECTED_FIELD = "selected";
 const idGetter = getter(DATA_ITEM_KEY);
 
-const TableKendoTAS = ({dataTableProps, columnsTableProps}) => {
+const TableKendoA2BSupport = ({dataTableProps}) => {
     const createDataState = (dataState) => {
       return {
         result: process(dataTableProps.slice(0), dataState),
@@ -32,7 +32,7 @@ const TableKendoTAS = ({dataTableProps, columnsTableProps}) => {
   const [selectedState, setSelectedState] = React.useState({});
   const [result, setResult] = React.useState(initialState.result);
   const [dataState, setDataState] = React.useState(initialState.dataState);
-  const [stateColumns, setStateColumns] = React.useState(columnsTableProps);
+  const [stateColumns, setStateColumns] = React.useState(columns);
   const onSelectionChange = (event) => {
     const newSelectedState = getSelectedState({
       event,
@@ -49,30 +49,9 @@ const TableKendoTAS = ({dataTableProps, columnsTableProps}) => {
   const onColumnsSubmit = (columnsState) => {
     setStateColumns(columnsState);
   };
-  const headerDateConvert = (props) =>{
-    console.log(props, "ini header")
-    return props
-  }
-  const CustomHeaderCell = (props) =>
-  {
-    if(props.field == "current_date" || props.field == "last_date"){
-      return(
-        <span>
-          {convertDateTime(null," DD-MMM", props.field == "last_date" ? 1 : null , "day")}
-        </span>
-      )
-    }
-    else{
-      return(
-        <span>
-          {getCapitilization(props.field)}
-        </span>
-      )
-    }
-  }
-    
+
   return (
-    <div>
+    <div id="table-kendo-A2B-support">
       <Grid
         selectable={{ enabled: true, mode: "single" }}
         dataItemKey={DATA_ITEM_KEY}
@@ -91,18 +70,35 @@ const TableKendoTAS = ({dataTableProps, columnsTableProps}) => {
       >
         {stateColumns.map(
           (column, idx) =>
-            column.show && (
+            column.show && column.children.length == 0 ? (
               <Column
                 key={idx}
-                cell={ column.title === "Trend" ? (props) => cellFontColorTAS(props) : null}
+                cell={ column.title === "Status" ? (props) => cellFontColorA2B(props) : null}
                 field={column.field}
-                headerCell={(props)=>CustomHeaderCell(props)}
+                title={column.title}
                 filter={column.filter}
                 columnMenu={(props) => (
                   <GridColumnMenuFilter {...props} filterUI={CustomFilterUI} />
                 )}
-              />
-            )
+              /> )
+            : (
+                <Column title={column.title}>
+                  {
+                    column.children.map((item)=>(
+                      <Column
+                        key={idx}
+                        cell={(props) => cellWithBackGroundA2BSupport(props, 71 )}
+                        field={ item.field}
+                        title={ item.title}
+                        filter={ item.filter}
+                        columnMenu={(props) => (
+                          <GridColumnMenuFilter {...props} filterUI={CustomFilterUI} />
+                        )}
+                      /> 
+                      ))
+                  }
+                </Column>
+              )
         )}
       </Grid>
       <br />
@@ -110,4 +106,4 @@ const TableKendoTAS = ({dataTableProps, columnsTableProps}) => {
   );
 };
 
-export default TableKendoTAS;
+export default TableKendoA2BSupport;

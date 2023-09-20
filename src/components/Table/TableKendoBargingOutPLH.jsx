@@ -18,10 +18,15 @@ const mergeCells = (data) => {
     }
     data[i].discontinuedCellRowSpan =
       rowSpan === 1 ? (looped === 1 ? 1 : undefined) : rowSpan;
+    }
+    defaultExpanded(data)
+    return data;
+  };
+const defaultExpanded = (data) => {
+  for(let i = 0; i < data.length; i++){
+    data[i].SubTotal ? data[i].expanded = true : data[i].expanded = false
   }
-  console.log(data, "inidata")
-  return data;
-};
+}
 const DetailComponent = (props) => {
     const dataItem = props.dataItem;
     return (
@@ -63,6 +68,7 @@ const TableKendoBargingOutPLH = () => {
   };
   // methods
   const updateItem = (item) => {
+    console.log(gridData,"ini grid dataaa")
     const updatedProducts = [...gridData];
     const index = updatedProducts.findIndex(
       (record) => record.ProductID === item.ProductID
@@ -110,6 +116,7 @@ const TableKendoBargingOutPLH = () => {
   const cellRender = (cell, props) => {
     const { dataItem, field } = props;
     if (field === "Jetty") {
+      console.log(dataItem,"ini data nya lur")
       if (dataItem.discontinuedCellRowSpan) {
         return (
           <td
@@ -159,7 +166,7 @@ const TableKendoBargingOutPLH = () => {
       <div>
           <Grid
             style={{
-              height: "500px",
+              height: "510px",
             }}
             data={gridData}
             cellRender={cellRender}
@@ -167,10 +174,11 @@ const TableKendoBargingOutPLH = () => {
               footer: "visible",
             }}
             expandField="expanded"
+            sortable={true}
             onExpandChange={expandChange}
             detail={DetailComponent}
             >
-            <Column field="ProductID" title="ID" width="40px" />
+            <Column field="ProductID" title="ID" width="40px"/>
             <Column field="Jetty" width="60px" />
             <Column field="ProductName" title="Entity" width="90px" />
             <Column field="Tugboat" title="Tugboat" width="120px" />

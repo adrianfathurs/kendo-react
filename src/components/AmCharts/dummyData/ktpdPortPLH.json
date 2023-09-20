@@ -1,0 +1,26 @@
+[
+    {
+      "category": "Daily",
+      "KTPDplan": 60000,
+      "KTPDactual": 59000,
+      "KTPDachiev": 900000
+    },
+    {
+      "category": "Monthly",
+      "KTPDplan": 60000,
+      "KTPDactual": 64927,
+      "KTPDachiev": 290000
+    },
+    {
+      "category": "YTD",
+      "KTPDplan": 49439,
+      "KTPDactual": 51570,
+      "KTPDachiev": 4500000
+    },
+    {
+      "category": "Yearly",
+      "KTPDplan": 52250,
+      "KTPDactual": 51570,
+      "KTPDachiev": 1500000
+    }
+  ]

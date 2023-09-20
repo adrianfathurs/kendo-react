@@ -1,10 +1,18 @@
 import * as React from "react";
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import products from "../../products.json";
+import { orderBy } from "@progress/kendo-data-query";
 
 import { cellWithBackGround } from "../../../../utils/table/index";
 
 const TableKendoMultiHeader = () => {
+  const initialSort = [
+    {
+      field: "ProductName",
+      dir: "asc",
+    },
+  ];
+  const [sort, setSort] = React.useState(initialSort);
   return (
     <>
       <div id="table-kendo-multi-header">
@@ -15,7 +23,12 @@ const TableKendoMultiHeader = () => {
             }}
             resizable={true}
             reorderable={true}
-            data={products.slice(0, 10)}
+            sortable={true}
+            sort={sort}
+            onSortChange={(e) => {
+              setSort(e.sort);
+            }}
+            data={orderBy(products.slice(0, 10), sort)}
             total={products.length}
           >
             <Column
@@ -32,7 +45,7 @@ const TableKendoMultiHeader = () => {
             />
             <Column title="Dump To">
               <Column field="ProductName" title="SP1" />
-              <Column field="UnitPrice" title="SP2" sort={true}></Column>
+              <Column field="UnitPrice" title="SP2"></Column>
               <Column field="UnitPrice" title="SP3"></Column>
               <Column field="UnitPrice" title="SP4"></Column>
               <Column field="UnitPrice" title="SP5"></Column>

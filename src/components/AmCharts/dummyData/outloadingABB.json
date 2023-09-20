@@ -1,27 +1,27 @@
 [
     {
       "category": "MTD",
-      "abbplan": 15140,
-      "abbactual": 17400,
-      "abbachiev": 21000
+      "abbplan": 177400,
+      "abbactual": 293653,
+      "abbachiev": 200000
     },
     {
       "category": "Monthly",
-      "abbplan": 16425,
-      "abbactual": 18500,
-      "abbachiev": 22000
+      "abbplan": 443500,
+      "abbactual": 293653,
+      "abbachiev": 220000
     },
     {
       "category": "YTD",
-      "abbplan": 25900,
-      "abbactual": 29900,
-      "abbachiev": 30000
+      "abbplan": 2866155,
+      "abbactual": 2982408,
+      "abbachiev": 240000
     },
     {
       "category": "Yearly",
-      "abbplan": 57645,
-      "abbactual": 65800,
-      "abbachiev": 70000
+      "abbplan": 4953955,
+      "abbactual": 2982408,
+      "abbachiev": 260000
     }
   ]
   

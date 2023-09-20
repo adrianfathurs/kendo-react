@@ -9,6 +9,8 @@ import {
 } from "@progress/kendo-react-grid";
 import { CustomColumnMenu } from "../Table/trial/customColumnMenu";
 import { cellWithBackGround, cellWithBackGroundPergerakanBarge, cellFontColorA2B } from "../../utils/table";
+import { CustomFilterUI } from "./customFilterUI";
+import { GridColumnMenuFilter } from "@progress/kendo-react-grid";
 
 import columns from "./dummyData/columnsA2BLDData";
 
@@ -75,11 +77,7 @@ const TableKendoA2B = ({dataTableProps}) => {
                 title={column.title}
                 filter={column.filter}
                 columnMenu={(props) => (
-                  <CustomColumnMenu
-                    {...props}
-                    columns={stateColumns}
-                    onColumnsSubmit={onColumnsSubmit}
-                  />
+                  <GridColumnMenuFilter {...props} filterUI={CustomFilterUI} />
                 )}
               />
             )

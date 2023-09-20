@@ -1,0 +1,24 @@
+#table-plan-multi-row-multi-cols {
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th{
+        background-color: rgba(55, 180, 0, 0.32) !important;
+        text-align: center;
+        font-size: 14px;
+    }
+    td, th {
+        border: 1px solid rgba(55, 180, 0, 0.32) ;
+        padding: 8px;
+    }
+    td{
+        font-size: 12px;
+    }
+    
+    // tr:nth-child(even) {
+    //     background-color: #dddddd;
+    // }
+}
